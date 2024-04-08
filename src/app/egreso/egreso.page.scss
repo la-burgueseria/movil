@@ -1,0 +1,36 @@
+.card-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2em;
+  justify-content: center;
+  text-align: center;
+}
+.card{
+  margin: 0 auto 2em;
+  width: 100%;
+  height: 10em;
+  border-radius: 1em;
+  background-color: rgba(190, 167, 167, 0.51);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  padding-left: .5em;
+}
+.insumo, .cantidad{
+  text-align: left;
+  margin-bottom: .5em;
+
+}
+.insumo span{
+  font-size: 1em;
+  font-weight: bold;
+  color: #232323;
+}
+.cantidad span{
+  font-size: 1em;
+  font-weight: bold;
+  color: #232323;
+
+}

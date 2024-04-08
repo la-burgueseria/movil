@@ -1,20 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <header class="login-header">
+    <div class="imagen-login">
+      <img src="assets/img/logoburgueseria-noSubtitle.png" alt="logo laburgueseria sin subtitulo">
+    </div>
+    <div class="laburgueseria">
+      <span>
+        Laburguesería
+      </span>
+    </div>
+  </header>
+
+  <div class="text-container">
+    <div class="slogan">
+      <span>La gestión al alcance de tus manos</span>
+    </div>
+    <div class="subtitulo-inicio-sesion">
+      <span>Por favor inicia sesión para continuar.</span>
+    </div>
   </div>
+
+  <form [formGroup]="form" class="container-input">
+    <mat-form-field appearance="outline">
+      <mat-label>Ingresa tú usuario</mat-label>
+      <input matInput formControlName="username">
+      <mat-error *ngIf="form.get('username')?.hasError('required')">Debes ingresar el usuario.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ingresa tú contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" (keydown.enter)="$event.preventDefault()">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="hide">
+        <img *ngIf="hide" src="assets/icons/visibility.svg" alt="">
+        <img *ngIf="!hide" src="assets/icons/not-visibility.svg" alt="">
+      </button>
+      <mat-error *ngIf="form.get('password')?.hasError('required')">Debes ingresar una contraseña válida.</mat-error>
+
+    </mat-form-field>
+
+  </form>
+  <div class="acciones">
+  </div>
+    <div class="iniciar">
+      <button (click)="iniciarSesion()">Iniciar sesión</button>
+    </div>
+
+
+    <div class="ion-text-center">
+      <!-- URL de recouperación de contraseña (cambiar cuando se pase a producccion) -->
+      <p>¿Olvidaste tu contraseña? <a href="http://localhost:4200/home/login/recover" target="_blank">Recuperar contraseña</a></p>
+    </div>
+
 </ion-content>

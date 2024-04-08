@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Gastos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="actions-container">
+      <app-bootstrap-range-calendar (fechasEnviadas) = "recibirDatosCalendario($event)"></app-bootstrap-range-calendar>
+    </div>
+    <div class="card-container">
+      <div class="card" *ngFor="let egreso of egresos"
+           matRipple
+           [matRippleRadius]="radius"
+           [matRippleColor]="color"
+      >
+        <div class="cantidad">
+          <span>{{egreso.categoria}}</span>
+        </div>
+        <div class="cantidad">
+          <span>Total: ${{egreso.total}}</span>
+        </div>
+        <div class="cantidad">
+          <span>Origen: {{egreso.deduccionDesde}}</span>
+        </div>
+        <div class="cantidad">
+          <span>Fecha: {{egreso.fecha.toLocaleString()}}</span>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</div>
+

@@ -1,0 +1,26 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Laburguesería</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ul>
+      <li><button (click)="goToInsumos()"
+                  matRipple
+                  [matRippleRadius]="radius"
+                  [matRippleColor]="color"
+      >Insumos</button></li>
+      <li><button (click)="goToGastos()"
+                  matRipple
+                  [matRippleRadius]="radius"
+                  [matRippleColor]="color"
+      >Gastos</button></li>
+      <li><button (click)="cerrarSesion()"
+                  matRipple
+                  [matRippleRadius]="radius"
+                  [matRippleColor]="color"
+      >Cerrar sesión</button></li>
+    </ul>
+  </ion-content>
+</ion-menu>

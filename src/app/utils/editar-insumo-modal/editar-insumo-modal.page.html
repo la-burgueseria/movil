@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Insumo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="editarInsumoForm" (ngSubmit)="guardarCambios()">
+    <ion-item>
+      <ion-label position="floating">Nombre del Insumo</ion-label>
+      <ion-input formControlName="nombre" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Restar insumos</ion-label>
+      <ion-input formControlName="cantidad" type="number" pattern="[0-9]+"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="editarInsumoForm.invalid">Guardar Cambios</ion-button>
+  </form>
+</ion-content>
